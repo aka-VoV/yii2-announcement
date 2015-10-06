@@ -1,0 +1,26 @@
+{
+    "name": "vov/yii2-announcement",
+    "description": "write and read announcement in a frontend and backend",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," announcement"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Vladimir",
+            "email": "vlvladimirvl@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "creocoder/yii2-nested-sets": "0.9.*",
+        "vova07/yii2-imperavi-widget": "*",
+        "vova07/yii2-select2-widget": "*",
+        "marciocamello/yii2-x-editable": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "vov\\announcement\\": ""
+        }
+    }
+}
