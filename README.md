@@ -1,3 +1,9 @@
+Usage
+-----
+
+**DO NOT USE IT! IN PROCESS!**
+
+
 announcement
 ============
 write and read announcement in a frontend and backend
@@ -20,10 +26,3 @@ update your database:
 yii migrate/up --migrationPath=@vendor/vov/yii2-announcement/migrations
 ```
 
-Usage
------
-
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \vov\announcement\AutoloadExample::widget(); ?>```
