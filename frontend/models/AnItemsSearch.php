@@ -2,10 +2,10 @@
 
 namespace vov\announcement\frontend\models;
 
-use vov\announcement\backend\models\AnCats;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use vov\announcement\backend\models\AnCats;
 use vov\announcement\common\models\AnItems;
 
 /**

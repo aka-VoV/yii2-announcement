@@ -5,7 +5,6 @@ namespace vov\announcement\backend\controllers;
 use Yii;
 use vov\announcement\backend\models\AnCats;
 use vov\announcement\backend\models\AnCatsSearch;
-use vov\announcement\backend\models\AnCatsQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

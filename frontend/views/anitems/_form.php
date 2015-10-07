@@ -19,11 +19,11 @@ use yii\captcha\Captcha;
 
                 <div class="row">
                     <div class="col-md-6">
-                        <?= $form->field($model, 'cat_id')->dropDownList($list, ['prompt' => \vov\announcement\Module::t('frontend', '--Select--')]) ?>
+                        <?= $form->field($model, 'cat_id')->dropDownList($list, ['prompt' => Yii::t('announcement', '--Select--')]) ?>
                     </div>
 
                     <div class="col-md-6">
-                        <?= $form->field($model, 'region_id')->dropDownList($regions, ['prompt' => \vov\announcement\Module::t('frontend', '--Select--')]) ?>
+                        <?= $form->field($model, 'region_id')->dropDownList($regions, ['prompt' => Yii::t('announcement', '--Select--')]) ?>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ use yii\captcha\Captcha;
                 ]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton($model->isNewRecord ? \vov\announcement\Module::t('frontend', 'Create') : \vov\announcement\Module::t('frontend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+                    <?= Html::submitButton($model->isNewRecord ? Yii::t('announcement', 'Create') : Yii::t('announcement', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

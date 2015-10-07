@@ -2,11 +2,9 @@
 
 namespace vov\announcement\common\models;
 
-use vov\announcement\backend\models\AnCats;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use vov\announcement\common\models\AnItems;
 
 /**
  * AnItemsSearch represents the model behind the search form about `vov\announcement\backend\models\AnItems`.
@@ -64,13 +62,8 @@ class AnItemsSearch extends AnItems
             return $dataProvider;
         }
 
-       // $cat = AnCats::find();
-
         $query->andFilterWhere([
             'id' => $this->id,
-            //'cat.name' => $this->cat->name,
-            //'region_id' => $this->region_id,
-            //'created_at' => $this->created_at,
             'status' => $this->status,
         ]);
 

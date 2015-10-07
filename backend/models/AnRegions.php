@@ -3,8 +3,8 @@
 namespace vov\announcement\backend\models;
 
 use Yii;
-use creocoder\nestedsets\NestedSetsBehavior;
 use vov\announcement\common\models\AnItems;
+use creocoder\nestedsets\NestedSetsBehavior;
 
 /**
  * This is the model class for table "an_regions".
@@ -39,7 +39,6 @@ class AnRegions extends \yii\db\ActiveRecord
     public function getParentReg(){
         $reg = AnRegions::findOne(['id' => $this->id]);
         $this->parentReg = $reg->parents(1)->one();
-        //return $parentCat;
     }
 
     public function getParents(){

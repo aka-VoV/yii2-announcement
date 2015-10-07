@@ -3,12 +3,11 @@
 namespace vov\announcement\backend\controllers;
 
 use Yii;
-use vov\announcement\backend\models\AnRegions;
-use vov\announcement\backend\models\AnRegionsSearch;
-use vov\announcement\backend\models\AnRegionsQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vov\announcement\backend\models\AnRegions;
+use vov\announcement\backend\models\AnRegionsSearch;
 
 /**
  * AnRegionsController implements the CRUD actions for AnRegions model.

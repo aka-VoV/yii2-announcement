@@ -4,7 +4,6 @@ namespace vov\announcement\backend\models;
 
 use Yii;
 use creocoder\nestedsets\NestedSetsBehavior;
-use yii\Helpers\ArrayHelper;
 
 /**
  * This is the model class for table "an_cats".
@@ -39,7 +38,6 @@ class AnCats extends \yii\db\ActiveRecord
     public function getParentCat(){
         $cat = AnCats::findOne(['id' => $this->id]);
         $this->parentCat = $cat->parents(1)->one();
-        //return $parentCat;
     }
 
     public function getParents(){
@@ -92,7 +90,6 @@ class AnCats extends \yii\db\ActiveRecord
             'depth' => 'Depth',
             'name' => 'Name',
             'local' => 'Local',
-            //'parentCat' => 'parentCat',
         ];
     }
 

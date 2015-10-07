@@ -2,11 +2,10 @@
 
 namespace vov\announcement\common\models;
 
-use vov\announcement\Module;
-use vov\announcement\backend\models\AnCats;
-use vov\announcement\backend\models\AnRegions;
 use Yii;
 use yii\helpers\HtmlPurifier;
+use vov\announcement\backend\models\AnCats;
+use vov\announcement\backend\models\AnRegions;
 
 /**
  * This is the model class for table "an_items".
@@ -30,9 +29,9 @@ use yii\helpers\HtmlPurifier;
 class AnItems extends \yii\db\ActiveRecord
 {
     const STATUS_NOT_MODERATING = 0;
-    const STATUS_PUBLISHED = 1;
-    const STATUS_UNPUBLISHED = 2;
-    const STATUS_BANNED = 3;
+    const STATUS_PUBLISHED      = 1;
+    const STATUS_UNPUBLISHED    = 2;
+    const STATUS_BANNED         = 3;
 
     public $verifyCode;
     /**
@@ -54,9 +53,9 @@ class AnItems extends \yii\db\ActiveRecord
     {
         return [
             self::STATUS_NOT_MODERATING => 'STATUS_NOT_MODERATING', //Module::t('announcement', 'STATUS_NOT_MODERATING'),
-            self::STATUS_PUBLISHED => 'STATUS_PUBLISHED', //Module::t('announcement', 'STATUS_PUBLISHED')
-            self::STATUS_UNPUBLISHED => 'STATUS_UNPUBLISHED', //Module::t('announcement', 'STATUS_UNPUBLISHED'),
-            self::STATUS_BANNED => 'STATUS_BANNED', //Module::t('announcement', 'STATUS_BANNED'),
+            self::STATUS_PUBLISHED      => 'STATUS_PUBLISHED', //Module::t('announcement', 'STATUS_PUBLISHED')
+            self::STATUS_UNPUBLISHED    => 'STATUS_UNPUBLISHED', //Module::t('announcement', 'STATUS_UNPUBLISHED'),
+            self::STATUS_BANNED         => 'STATUS_BANNED', //Module::t('announcement', 'STATUS_BANNED'),
         ];
     }
 
@@ -87,18 +86,18 @@ class AnItems extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => \vov\announcement\Module::t('common/model', 'ID'),
-            'cat_id' => \vov\announcement\Module::t('common/model', 'Category ID'),
-            'region_id' => \vov\announcement\Module::t('common/model', 'Region ID'),
-            'created_at' => \vov\announcement\Module::t('common/model', 'Created at'),
-            'status' => \vov\announcement\Module::t('common/model', 'Status'),
-            'local' => \vov\announcement\Module::t('common/model', 'Local'),
-            'title' => \vov\announcement\Module::t('common/model', 'Title'),
-            'text' => \vov\announcement\Module::t('common/model', 'Text'),
-            'person' => \vov\announcement\Module::t('common/model', 'Person'),
-            'phone' => \vov\announcement\Module::t('common/model', 'Phone'),
-            'email' => \vov\announcement\Module::t('common/model', 'Email'),
-            'site' => \vov\announcement\Module::t('common/model', 'Site'),
+            'id'            => Yii::t('announcement', 'ID'),
+            'cat_id'        => Yii::t('announcement', 'Category ID'),
+            'region_id'     => Yii::t('announcement', 'Region ID'),
+            'created_at'    => Yii::t('announcement', 'Created at'),
+            'status'        => Yii::t('announcement', 'Status'),
+            'local'         => Yii::t('announcement', 'Local'),
+            'title'         => Yii::t('announcement', 'Title'),
+            'text'          => Yii::t('announcement', 'Text'),
+            'person'        => Yii::t('announcement', 'Person'),
+            'phone'         => Yii::t('announcement', 'Phone'),
+            'email'         => Yii::t('announcement', 'Email'),
+            'site'          => Yii::t('announcement', 'Site'),
         ];
     }
 

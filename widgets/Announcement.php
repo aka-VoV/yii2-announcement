@@ -7,11 +7,11 @@
  */
 
 namespace vov\announcement\widgets;
+
+use Yii;
 use vov\announcement\backend\models\AnCats;
 use vov\announcement\backend\models\AnRegions;
-use vov\announcement\common\models\AnItems;
 use vov\announcement\frontend\models\AnItemsSearch;
-use Yii;
 use vov\announcement\common\helpers\NeccFunctions;
 
 

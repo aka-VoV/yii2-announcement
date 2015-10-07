@@ -7,6 +7,7 @@
  */
 
 namespace vov\announcement;
+
 use Yii;
 
 class Module extends \yii\base\Module{
@@ -14,12 +15,6 @@ class Module extends \yii\base\Module{
     protected $_isBackend;
     // змінна, щоб визначити фронтенд чи бекенд
     public $controllerNamespace = 'vov\announcement\frontend\controllers';
-
-    // перевод повідомлень в модулі
-    public static function t($category, $message, $params = [], $language = null)
-    {
-        return Yii::t('vov/announcement/' . $category, $message, $params, $language);
-    }
 
     public function init()
     {
@@ -33,6 +28,8 @@ class Module extends \yii\base\Module{
             $this->setViewPath('@vov/announcement/frontend/views');
             \Yii::configure($this, require(__DIR__ . '/frontend/config/main.php'));
         }
+
+        $this->registerTranslations();
     }
 
 
@@ -44,6 +41,19 @@ class Module extends \yii\base\Module{
         }
 
         return $this->_isBackend;
+    }
+
+    /**
+     * Register module translations
+     * This method calling during module initialization
+     * @return void
+     */
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['announcement'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@vov/announcement/messages'
+        ];
     }
 
 }

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vov\announcement\backend\models\AnItems */
 
-$this->title = \vov\announcement\Module::t('frontend', 'Create An Items');
-$this->params['breadcrumbs'][] = ['label' => \vov\announcement\Module::t('frontend', 'An Items'), 'url' => ['index']];
+$this->title = Yii::t('announcement', 'Create An Items');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('announcement', 'An Items'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
