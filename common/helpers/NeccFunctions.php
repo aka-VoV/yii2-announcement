@@ -41,6 +41,19 @@ class NeccFunctions {
 
     }
 
+    /**
+     * Get current app language code
+     * @return string
+     */
+    public function getAppLanguageCode()
+    {
+        if (preg_match('/-/', Yii::$app->language)) {
+            return explode('-', Yii::$app->language)[0];
+        } else {
+            return Yii::$app->language;
+        }
+    }
+
     public static function getLanguages(){
 
         if(isset(\Yii::$app->i18n->languages) && !empty(\Yii::$app->i18n->languages)){

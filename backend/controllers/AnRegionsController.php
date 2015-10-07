@@ -77,13 +77,15 @@ class AnRegionsController extends Controller
             $formsData = $formsData['AnRegions'];
             if($formsData['parentReg'] == 0){
                 $reg = new AnRegions([
-                    'name' => $formsData['name']
+                    'name' => $formsData['name'],
+                    'local' => $formsData['local']
                 ]);
                 $reg->makeRoot();
             }else{
                 $parent = AnRegions::findOne(['id' => $formsData['parentReg']]);
                 $reg = new AnRegions([
-                    'name' => $formsData['name']
+                    'name' => $formsData['name'],
+                    'local' => $formsData['local']
                 ]);
                 $reg->appendTo($parent);
             }
@@ -125,12 +127,14 @@ class AnRegionsController extends Controller
                 $reg = AnRegions::findOne([
                     'name' => $formsData['name']
                 ]);
+                $reg->local = $formsData['local'];
                 $reg->makeRoot();
             }else{
                 $parent = AnRegions::findOne(['id' => $formsData['parentReg']]);
                 $reg = AnRegions::findOne([
                     'name' => $formsData['name']
                 ]);
+                $reg->local = $formsData['local'];
                 $reg->appendTo($parent);
             }
 
