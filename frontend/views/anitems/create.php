@@ -6,15 +6,16 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vov\announcement\backend\models\AnItems */
 
-$this->title = Yii::t('announcement', 'Create An Items');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('announcement', 'An Items'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = Yii::t('yii', 'Create').' '.Yii::t('announcement', 'announcement');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('announcement', 'announcements'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('yii', 'Create');
 ?>
 
-    <div class="block">
-        <header><h1>Оголошення</h1></header>
+    <div class="row">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="col-md-12">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
     <?= $this->render('_form', [
         'model' => $model,
