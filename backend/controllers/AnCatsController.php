@@ -3,11 +3,12 @@
 namespace vov\announcement\backend\controllers;
 
 use Yii;
-use vov\announcement\backend\models\AnCats;
-use vov\announcement\backend\models\AnCatsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vov\announcement\backend\models\AnCats;
+use vov\announcement\backend\models\AnCatsSearch;
+
 
 /**
  * AnCatsController implements the CRUD actions for AnCats model.
