@@ -61,15 +61,15 @@ class AnItemsController extends Controller
 
         // вибираємо головних батьків
         $parentCats = AnCats::find()->roots()->all();
+        $parentRegs = AnRegions::find()->roots()->all();
+
         $this->categories = $NeccFunc->getCorrectList($parentCats);
+        $this->regions = $NeccFunc->getCorrectList($parentRegs);
 
-        foreach($parentCats as $cats){
-            $this->categories[$cats->id] = $cats->name;
-        }
-
-        // виборка категорій та регіонів
-        //$this->categories = AnCats::find()->addOrderBy('tree')->addOrderBy('lft')->all();
-        $this->regions = AnRegions::find()->addOrderBy('tree')->addOrderBy('lft')->all();
+        // add parent category to search
+//        foreach($parentCats as $cats){
+//            $this->categories[$cats->id] = $cats->name;
+//        }
 
         // пошукові запроси, якщо такі є
         $this->searchModel = new AnItemsSearch();
