@@ -6,18 +6,21 @@
  * Time: 17:13
  */
 use yii\widgets\ListView;
-use yii\jui\DatePicker;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use vova07\select2\Widget;
 use kartik\datetime\DateTimePicker;
+use kartik\date\DatePicker;
 use dosamigos\selectize\SelectizeTextInput;
 
 
 $this->registerJs(
     '$("document").ready(function(){
         $("#annSearchForm").on("pjax:end", function() {
+            $.pjax.reload({container:"#listview", timeout: 2000});  //Reload GridView
+        });
+        $("#searchByCat").on("pjax:end", function() {
             $.pjax.reload({container:"#listview", timeout: 2000});  //Reload GridView
         });
     });', \yii\web\View::POS_READY
@@ -55,7 +58,7 @@ $this->registerJs(
 <!--                </div>-->
 
                 <div class="col-md-3">
-                    <?= $form->field($searchModel, 'created_at')->widget(DateTimePicker::className(),[
+                    <?= $form->field($searchModel, 'created_at')->widget(DatePicker::className(),[
                         'options' => ['placeholder' => Yii::t('announcement', 'Select publication date')],
                         'pluginOptions' => [
                             'format' => 'yyyy-mm-dd',
@@ -155,7 +158,7 @@ $this->registerJs(
                                 <div class="col-md-12 col-xs-4">
                                     <h3><?=$key?>:</h3>
                                     <?foreach($value as $k => $v):?>
-                                        <p><a href="/<?= explode('-', Yii::$app->language)[0];?>/?<?= urlencode('AnItemsSearch[category][]')?>=<?=$k;?>"><?=$v;?></a></p>
+                                        <p><a href="/announcement/anitems/index?<?= urlencode('AnItemsSearch[category][]')?>=<?=$k;?>"><?=$v;?></a></p>
                                     <?endforeach;?>
                                 </div>
                             <?endif;?>

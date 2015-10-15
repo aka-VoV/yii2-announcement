@@ -45,11 +45,15 @@ class Announcement extends \yii\base\Widget{
 
         // виборка категорій та регіонів
         //$this->categories = AnCats::find()->addOrderBy('tree')->addOrderBy('lft')->all();
-        $this->regions = AnRegions::find()->addOrderBy('tree')->addOrderBy('lft')->all();
+        $parentRegs = AnRegions::find()->roots()->all();
+        $this->regions = $NeccFunc->getCorrectList($parentRegs);
+
+        //$this->regions = AnRegions::find()->addOrderBy('tree')->addOrderBy('lft')->all();
 
         // пошукові запроси, якщо такі є
         $this->searchModel = new AnItemsSearch();
         $this->dataProvider = $this->searchModel->search(Yii::$app->request->queryParams, $perPage);
+        $this->registerTranslations();
 
     }
 
@@ -61,6 +65,14 @@ class Announcement extends \yii\base\Widget{
             'searchModel'=> $this->searchModel,
             'dataProvider'=> $this->dataProvider,
         ]);
+    }
+
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['announcement'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@vov/announcement/messages'
+        ];
     }
 
 }
