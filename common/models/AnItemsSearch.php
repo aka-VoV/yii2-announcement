@@ -68,8 +68,8 @@ class AnItemsSearch extends AnItems
         ]);
 
         $query->andFilterWhere(['like', 'local', $this->local])
-            ->andFilterWhere(['like', 'an_cats.name', $this->category])
-            ->andFilterWhere(['like', 'an_regions.name', $this->region])
+            ->andFilterWhere(['like', 'an_cats.id', $this->category])
+            ->andFilterWhere(['like', 'an_regions.id', $this->region])
             ->andFilterWhere(['like', 'created_at', $this->created_at])
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'text', $this->text])

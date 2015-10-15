@@ -15,6 +15,7 @@
         "creocoder/yii2-nested-sets": "0.9.*",
         "vova07/yii2-imperavi-widget": "*",
         "vova07/yii2-select2-widget": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev",
         "marciocamello/yii2-x-editable": "dev-master"
     },
 

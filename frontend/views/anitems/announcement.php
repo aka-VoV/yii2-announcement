@@ -11,6 +11,7 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use vova07\select2\Widget;
+use kartik\datetime\DateTimePicker;
 use dosamigos\selectize\SelectizeTextInput;
 
 
@@ -23,8 +24,8 @@ $this->registerJs(
 );
 ?>
 
-
-
+<div class="row">
+<div class="col-md-9">
     <?Pjax::begin([
         'timeout' => false,
         'id' => 'annSearchForm',
@@ -43,13 +44,25 @@ $this->registerJs(
                     <?= $form->field($searchModel, 'title')->textInput()?>
                 </div>
 
+<!--                <div class="col-md-3">-->
+<!--                    --><?//= $form->field($searchModel, 'created_at')->widget(\yii\jui\DatePicker::classname(), [
+//                        'language' => \vov\announcement\common\helpers\NeccFunctions::getShortLangFromLanguage(),
+//                        'dateFormat' => 'yyyy-MM-dd',
+//                        'options' => [
+//                            'class' => 'form-control'
+//                        ],
+//                    ]) ?>
+<!--                </div>-->
+
                 <div class="col-md-3">
-                    <?= $form->field($searchModel, 'created_at')->widget(\yii\jui\DatePicker::classname(), [
-                        'language' => \vov\announcement\common\helpers\NeccFunctions::getShortLangFromLanguage(),
-                        'dateFormat' => 'yyyy-MM-dd',
-                        'options' => [
-                            'class' => 'form-control'
-                        ],
+                    <?= $form->field($searchModel, 'created_at')->widget(DateTimePicker::className(),[
+                        'options' => ['placeholder' => Yii::t('announcement', 'Select publication date')],
+                        'pluginOptions' => [
+                            'format' => 'yyyy-mm-dd',
+                            'viewSelect'=> 'month',
+                            'autoclose' => true,
+                            'todayHighlight' => true
+                        ]
                     ]) ?>
                 </div>
 
@@ -118,4 +131,41 @@ $this->registerJs(
         </ul>
 
     <?Pjax::end();?>
+</div>
 
+<div class="col-md-3">
+    <div class="col-md-12 menu">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="<?= yii\helpers\Url::toRoute('announcement/anitems/create')?>" class="btn btn-success btn-success-blue">Додати оголошення</a>
+            </div>
+            <div class="visible-xs-12">
+                <hr/>
+            </div>
+
+            <div class="col-md-12">
+                <div class="row">
+                    <? if ($categories): ?>
+                        <?php Pjax::begin([
+                            'id' => 'searchByCat',
+                            'timeout' => false,
+                        ]);?>
+                        <?foreach($categories as $key => $value):?>
+                            <?if(is_array($value)):?>
+                                <div class="col-md-12 col-xs-4">
+                                    <h3><?=$key?>:</h3>
+                                    <?foreach($value as $k => $v):?>
+                                        <p><a href="/<?= explode('-', Yii::$app->language)[0];?>/?<?= urlencode('AnItemsSearch[category][]')?>=<?=$k;?>"><?=$v;?></a></p>
+                                    <?endforeach;?>
+                                </div>
+                            <?endif;?>
+                        <?endforeach;?>
+                        <?Pjax::end();?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
