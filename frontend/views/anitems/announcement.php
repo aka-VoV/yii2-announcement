@@ -140,8 +140,12 @@ AnnouncementAsset::register($this);
                     </div>
                     <div class="col-md-12">
                         <div class="row">
-
                             <? if ($categories): ?>
+                                <div class="col-md-12">
+                                    <h3>
+                                        <?= Yii::t('announcement', 'Category')?>
+                                    </h3>
+                                </div>
                                 <?php Pjax::begin([
                                     'id' => 'searchByCat',
                                     'timeout' => false,
@@ -149,13 +153,13 @@ AnnouncementAsset::register($this);
                                 <?foreach($categories as $key => $value):?>
                                     <?if(is_array($value)):?>
                                         <div class="col-md-12 col-xs-4">
-                                            <h3><?=$key?>:</h3>
+                                            <h4><?=$key?>:</h4>
                                             <?foreach($value as $k => $v):?>
-                                                <p>
+                                                <div>
                                                     <a href="/announcement/anitems/index?<?= urlencode('AnItemsSearch[category][]')?>=<?=$k;?>">
                                                         <?= $v;?>
                                                     </a>
-                                                </p>
+                                                </div>
                                             <?endforeach;?>
                                         </div>
                                     <?endif;?>
