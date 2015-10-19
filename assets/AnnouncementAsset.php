@@ -9,6 +9,7 @@
 namespace vov\announcement\assets;
 
 use yii\web\AssetBundle;
+use yii\web\View;
 use Yii;
 
 class AnnouncementAsset extends AssetBundle
@@ -17,7 +18,14 @@ class AnnouncementAsset extends AssetBundle
     public $css = [
         'css/common.css',
     ];
+    public $js = [
+        'js/common.js',
+    ];
 
+    public $depends = [
+        'yii\web\JqueryAsset',
+        'yii\bootstrap\BootstrapAsset',
+    ];
     /**
      * @inheritdoc
      */
