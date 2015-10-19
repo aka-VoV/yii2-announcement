@@ -17,5 +17,26 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-
+    '--Select--' => 'select',
+    'Category' => 'category',
+    'Category ID' => 'category',
+    'Choose category' => 'choose category',
+    'Choose region' => 'choose region',
+    'Create' => 'create',
+    'Created at' => 'created at',
+    'Email' => 'email',
+    'ID' => 'ID',
+    'Local' => 'language',
+    'Person' => 'person',
+    'Phone' => 'phone',
+    'Region' => 'region',
+    'Region ID' => 'region',
+    'Select publication date' => 'select publication date',
+    'Site' => 'site',
+    'Status' => 'status',
+    'Text' => 'text',
+    'Title' => 'title',
+    'Update' => 'update',
+    'announcement' => 'announcement',
+    'announcements' => 'announcements',
 ];

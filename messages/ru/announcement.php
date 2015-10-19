@@ -17,5 +17,26 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-
+    '--Select--' => 'выбрать',
+    'Category' => 'категория',
+    'Category ID' => 'категория',
+    'Choose category' => 'выберите категорию',
+    'Choose region' => 'выберите регион',
+    'Create' => 'создать',
+    'Created at' => 'создано в',
+    'Email' => 'електронная почта',
+    'ID' => 'ID',
+    'Local' => 'язык',
+    'Person' => 'ФИО',
+    'Phone' => 'телефонный номер',
+    'Region' => 'регион',
+    'Region ID' => 'регион',
+    'Select publication date' => 'выберите дату публикации',
+    'Site' => 'сайт',
+    'Status' => 'статус',
+    'Text' => 'текст',
+    'Title' => 'заголовок',
+    'Update' => 'обновить',
+    'announcement' => 'обьявление',
+    'announcements' => 'обьявления',
 ];
