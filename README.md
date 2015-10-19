@@ -1,6 +1,6 @@
 Yii2-Announcement
 =======
-Announcement module allows you have announcement board with infinitely nested categories and regions
+Announcement module allows you to have announcement board with infinitely nested categories and regions
 
 
 ----------
