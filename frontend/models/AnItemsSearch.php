@@ -46,7 +46,7 @@ class AnItemsSearch extends AnItems
      */
     public function search($params, $perPage)
     {
-        $query = AnItems::find()->where(['status' => 1]);
+        $query = AnItems::find()->where(['status' => 1])->orderBy('created_at DESC');
         $query->joinwith(['cat', 'region']);
 
         $dataProvider = new ActiveDataProvider([
