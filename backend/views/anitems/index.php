@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return '<span class="label ' . $class . '">' . $searchModel->getStatus() . '</span>';
                 },
                 'class' => \mcms\xeditable\XEditableColumn::className(),
-                'url' => 'anitems/editable',
+                'url' => \yii\helpers\Url::toRoute('editable'),
                 'dataType'=>'select',
                 'editable'=>[
                     'source'=>[
